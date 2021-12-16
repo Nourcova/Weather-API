@@ -1,4 +1,4 @@
-.app {
+/*app {
   height: 100vh;
   width: 100vw;
   transition: background-color 1s ease-in;
@@ -19,7 +19,78 @@
 /*  Search bar */
 
 /* Current weather */
-
+/*
 div {
   border: 5px solid red;
 }
+*/
+*{
+  font-family: 'Raleway','sans-serif';
+}
+body{
+  margin:0;
+}
+header{
+  background-color: #759eda;
+  display: flex;
+ height: 120px;
+ align-items: center;
+}
+
+input{
+  border: none;
+  background-color: transparent;
+}
+input:focus{
+border: none;
+outline: none;
+border-bottom: 1px solid black;
+}
+button{
+  height: 50px;
+  background-color: #5979ce;
+  border: none;
+  
+}
+.input{
+  margin-right: 20px;
+}
+.main{
+  background-color: #9ccef4;
+}
+.img1 img{
+  width:20%;
+}
+.img1,p{
+  text-align: center;
+
+}
+.weath img{
+  width: 100px;
+}
+.weath{
+  text-align: center;
+  margin:10px;
+}
+.container{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+@media  (max-width:446px) {
+header{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+button{
+  margin-top: 10px;
+}
+input{
+  text-align: center;
+}
+}
+ 
+
+
