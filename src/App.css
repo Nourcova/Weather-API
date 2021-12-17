@@ -68,16 +68,17 @@ font-weight: bold;
 }
 .main{
   background-color: #9ccef4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.img1 img{
-  width:20%;
-}
+/* .img1 img{
+  width:40%;
+} */
 .img1,p{
   text-align: center
 }
-span{
-  margin-left: 10px;
-}
+
 .transspan{
  opacity: 0.5;
 }

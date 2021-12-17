@@ -1,19 +1,11 @@
 import React, { Component } from "react";
 import Search from "./components/Search";
-
-import SayHi, { SayHello } from "./components/WeatherItem";
+import WeatherNow from "./components/WeatherNow";
 import fakeWeatherData from "./fakeWeatherData.json";
 
 import "./App.css";
-import storm from "./img/weather-icons/storm.svg";
-import clear from "./img/weather-icons/clear.svg";
-import cloudy from "./img/weather-icons/cloudy.svg";
-import drizzle from "./img/weather-icons/drizzle.svg";
-import fog from "./img/weather-icons/fog.svg";
-import mostlycloudy from "./img/weather-icons/mostlycloudy.svg";
-import partlycloudy from "./img/weather-icons/partlycloudy.svg";
-import rain from "./img/weather-icons/rain.svg";
-import snow from "./img/weather-icons/snow.svg";
+
+import WeatherList from "./components/WeatherList";
 
 
 class App extends Component {
@@ -30,8 +22,8 @@ class App extends Component {
 
   render() {
     return (
-      <div className="app">
-        <header>
+     
+        /*<header>
           <div className="input">
             <input type="search" name="search" placeholder="Search City" /></div>
           <div><button>find weather</button></div>
@@ -81,10 +73,19 @@ class App extends Component {
               <p>13 ℃</p>
             </div>
           </div>
-        </div>
+        </div>*/
 
+    
+<div className="app">
+
+      <Search/>
+      <div className="main">
+        <WeatherNow/> 
+        <WeatherList/>
       </div>
+      
 
+       </div>
     );
   }
 }
