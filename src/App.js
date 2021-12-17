@@ -9,16 +9,16 @@ import WeatherList from "./components/WeatherList";
 
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      name: "Karim"
-    };
-  }
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     name: "Karim"
+  //   };
+  // }
 
-  handleInputChange = value => {
-    this.setState({ name: value });
-  };
+  // handleInputChange = value => {
+  //   this.setState({ name: value });
+  // };
 
   render() {
     return (

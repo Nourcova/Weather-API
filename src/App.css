@@ -37,9 +37,14 @@ header{
  align-items: center;
  align-content: flex-end;
 }
-/*main{
-  padding-bottom: 20px;
-}*/
+button,input{
+  margin-top: 10px;
+margin-left: 20px;
+  
+}
+main{
+  width: 100%;
+}
 input{
   border: none;
   background-color: transparent;
@@ -89,6 +94,7 @@ font-weight: bold;
 .weath{
   text-align: center;
   margin:10px;
+  padding-bottom: 20px;
 }
 .container{
   display: flex;
@@ -103,11 +109,7 @@ header{
   align-items: flex-start;
   align-content: flex-start;
 }
-button,input{
-  margin-top: 10px;
-margin-left: 20px;
-  
-}
+
 
 }
  

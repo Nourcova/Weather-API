@@ -20,7 +20,7 @@ export class WeatherNow extends Component {
             
                 <div className="img1"><img src={mostlycloudy} alt="storm icon" />
                     <p className="oc">overcast cloud</p>
-                    <p className="temperature"><span>Temperature</span> 10℃ to 11℃</p>
+                    <p className="temperature"><span>Temperature</span> 10℃ <span> to </span> 11℃</p>
                     <p className="temperature"><span>Humidity &nbsp;</span> 78% &nbsp;<span >  Pressure  </span> &nbsp; 1008.8</p>
                 </div>
             )
