@@ -38,46 +38,47 @@ class App extends Component {
         </header>
 
         <div className="main">
-          <div className="img1"><img src={mostlycloudy} alt="storm icon" />
-            <p>overcast cloud</p>
-            <p>temperature 10<span> ℃ </span> to 11 <span> ℃</span></p>
-            <p><span>humidity</span><span> 78% </span><span> pressure </span><span> 1008.8 </span></p>
+          <div className="img1"><img src={'https://placekitten.com/200/300'} alt="storm icon" />
+            <p className="oc">overcast cloud</p>
+            <p className="temperature"><span>Temperature</span> 10℃ to 11℃</p>
+            <p className="temperature"><span>Humidity &nbsp;</span> 78% &nbsp;<span >  Pressure  </span> &nbsp; 1008.8</p>
+            
             </div>
           <div className="container">
             <div className="weath">
               <p>3:00</p>
-              <img src={mostlycloudy} alt="storm icon" />
-              <p>8</p>
+              <img src={"https://placekitten.com/200/300"} alt="storm icon" />
+              <p>8 ℃</p>
             </div>
             <div className="weath">
-              <p>3:00</p>
-              <img src={mostlycloudy} alt="storm icon" />
-              <p>8</p>
+              <p>6:00</p>
+              <img src={"https://placekitten.com/200/300"} alt="storm icon" />
+              <p>9 ℃</p>
             </div>
             <div className="weath">
-              <p>3:00</p>
-              <img src={mostlycloudy} alt="storm icon" />
-              <p>8</p>
+              <p>9:00</p>
+              <img src={"https://placekitten.com/200/138"} alt="storm icon" />
+              <p>14 ℃</p>
             </div>
             <div className="weath">
-              <p>3:00</p>
-              <img src={mostlycloudy} alt="storm icon" />
-              <p>8</p>
+              <p>12:00</p>
+              <img src={"https://placekitten.com/200/300"} alt="storm icon" />
+              <p>17 ℃</p>
             </div>
             <div className="weath">
-              <p>3:00</p>
-              <img src={mostlycloudy} alt="storm icon" />
-              <p>8</p>
+              <p>15:00</p>
+              <img src={"https://placekitten.com/200/286"} alt="storm icon" />
+              <p>18 ℃</p>
             </div>
             <div className="weath">
-              <p>3:00</p>
-              <img src={mostlycloudy} alt="storm icon" />
-              <p>8</p>
+              <p>18:00</p>
+              <img src={"https://placekitten.com/200/286"} alt="storm icon" />
+              <p>16 ℃</p>
             </div>
             <div className="weath">
-              <p>3:00</p>
-              <img src={mostlycloudy} alt="storm icon" />
-              <p>8</p>
+              <p>21:00</p>
+              <img src={"https://placekitten.com/200/286"} alt="storm icon" />
+              <p>13 ℃</p>
             </div>
           </div>
         </div>

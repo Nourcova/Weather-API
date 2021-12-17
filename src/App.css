@@ -35,8 +35,11 @@ header{
   display: flex;
  height: 120px;
  align-items: center;
+ align-content: flex-end;
 }
-
+/*main{
+  padding-bottom: 20px;
+}*/
 input{
   border: none;
   background-color: transparent;
@@ -52,8 +55,16 @@ button{
   border: none;
   
 }
-.input{
-  margin-right: 20px;
+.oc{
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+.img1 span{
+font-weight: bold;
+}
+.temperature{ 
+  color: #0F1D4D;
 }
 .main{
   background-color: #9ccef4;
@@ -62,11 +73,17 @@ button{
   width:20%;
 }
 .img1,p{
-  text-align: center;
-
+  text-align: center
+}
+span{
+  margin-left: 10px;
+}
+.transspan{
+ opacity: 0.5;
 }
 .weath img{
   width: 100px;
+  height: 100px;
 }
 .weath{
   text-align: center;
@@ -82,14 +99,15 @@ button{
 header{
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: flex-start;
+  align-content: flex-start;
 }
-button{
+button,input{
   margin-top: 10px;
+margin-left: 20px;
+  
 }
-input{
-  text-align: center;
-}
+
 }
  
 
