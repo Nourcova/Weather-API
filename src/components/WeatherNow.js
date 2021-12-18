@@ -18,10 +18,10 @@ export class WeatherNow extends Component {
     render() {
         return (
             
-                <div className="img1"><img src={mostlycloudy} alt="storm icon" />
+                <div className="img1"><img src={this.props.source} alt="storm icon" />
                     <p className="oc">overcast cloud</p>
-                    <p className="temperature"><span>Temperature</span> 10℃ to 11℃</p>
-                    <p className="temperature"><span>Humidity &nbsp;</span> 78% &nbsp;<span >  Pressure  </span> &nbsp; 1008.8</p>
+                    <p className="temperature"><span>Temperature &nbsp;</span> {this.props.from} <span> &nbsp;to </span> &nbsp; {this.props.to} </p>
+                    <p className="temperature"><span>Humidity &nbsp;</span> {this.props.humudity}&nbsp;<span >  Pressure  </span> &nbsp;{this.props.pressure}</p>
                 </div>
             )
     }
