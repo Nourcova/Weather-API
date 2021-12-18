@@ -14,13 +14,13 @@ class WeatherList extends Component {
     return (
       <div className="container">
 
-        <SingleWeather time="3:00" source={mostlycloudy} temperature="9 ℃" />
-        <SingleWeather time="3:00" source={mostlycloudy} temperature="9 ℃" />
-        <SingleWeather time="3:00" source={mostlycloudy} temperature="9 ℃" />
-        <SingleWeather time="3:00" source={mostlycloudy} temperature="9 ℃" />
-        <SingleWeather time="3:00" source={mostlycloudy} temperature="9 ℃" />
-        <SingleWeather time="3:00" source={mostlycloudy} temperature="9 ℃" />
-        <SingleWeather time="3:00" source={mostlycloudy} temperature="9 ℃" />
+        <SingleWeather time="3:00" source={mostlycloudy} temperature="8 ℃" />
+        <SingleWeather time="6:00" source={mostlycloudy} temperature="9 ℃" />
+        <SingleWeather time="9:00" source={clear} temperature="14 ℃" />
+        <SingleWeather time="12:00" source={clear} temperature="17 ℃" />
+        <SingleWeather time="15:00" source={clear} temperature="18 ℃" />
+        <SingleWeather time="18:00" source={clear} temperature="16 ℃" />
+        <SingleWeather time="21:00" source={mostlycloudy} temperature="13 ℃" />
 
       </div>
       /* <div className="weath">

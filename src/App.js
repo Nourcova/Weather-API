@@ -6,7 +6,7 @@ import fakeWeatherData from "./fakeWeatherData.json";
 import "./App.css";
 
 import WeatherList from "./components/WeatherList";
-
+import mostlycloudy from "./img/weather-icons/mostlycloudy.svg";
 
 class App extends Component {
   // constructor(props) {
@@ -80,7 +80,7 @@ class App extends Component {
 
       <Search/>
       <div className="main">
-        <WeatherNow/> 
+        <WeatherNow source={mostlycloudy} from="10℃" to="11℃" humudity="78%" pressure="1008.8"/> 
         <WeatherList/>
       </div>
       
