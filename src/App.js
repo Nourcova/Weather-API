@@ -27,21 +27,51 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      city:"",
+    source:"",
+    humidity:0,
+    temperatur:"",
+    min_temperature:"",
+    max_temperatue:"",
+    description:"",
+    pressure:""
     };
+   
+  
   }
+  fetchWeather = () => {
+    let key='ab59383c1894d3221a9b9785e7c9731a';
+    let url = `http://api.openweathermap.org/data/2.5/forecast?q=London&cnt=8&units=metric&appid=${key}`;
+    
+    fetch(url) 
+    .then(res => res.json())
+    .then(data => {
+      // console.log(data);
+      this.setState({
+        city:data.city.name,
+        humidity:data.list[0].main.humidity,
+        pressure: data.list[0].main.pressure,
+        min_temperature: data.list[0].main.temp_min,
+        max_temperature:data.list[0].main.temp_max,
+        description:data.list[0].weather[0].description,
+        source:data.list[0].weather[0].main,
+  
+      })
+     return data;
+    })
+  }
+componentDidMount(){
+ this.fetchWeather()
+} 
 
   render() {
-    console.log(fakeWeatherData.list[4].weather[0].main);
- 
     return (
 
       <div className="app">
-
         <Search />
         <div className="main">
-          <WeatherNow source={fakeWeatherData.list[4].weather[0].main} from="10℃" to="11℃" humudity="78%" pressure="1008.8" />
-          <WeatherList fakeWeatherData={fakeWeatherData.list} />
+          <WeatherNow source={this.state.source} min_temperature={this.state.min_temperature} max_temperature={this.state.max_temperature} humudity={this.state.humidity} pressure={this.state.pressure} description={this.state.description} />
+          <WeatherList fakeWeatherData={this.fetchWeather()}/>
         </div>
       </div>
 

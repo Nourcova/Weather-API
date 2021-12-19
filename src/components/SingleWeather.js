@@ -12,20 +12,20 @@ import snow from "../img/weather-icons/snow.svg";
 class SingleWeather extends Component {
     render() {
         const checkWeather = () =>{
-            let ibrahim = '';
+            let status = '';
               switch (this.props.source) {
                 case 'Clear':
-                  ibrahim = clear;
+                  status = clear;
                   break;
                 case 'Clouds':
-                  ibrahim = cloudy;
+                  status = cloudy;
                   break;
                 case 'Rain':
-                  ibrahim = rain;
+                  status = rain;
                   break;
               }
-              console.log(ibrahim)
-              return ibrahim
+            
+              return status
           }
         return (
             

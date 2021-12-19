@@ -13,8 +13,8 @@ import SingleWeather from './SingleWeather';
 class WeatherList extends Component {
   render() {
 
-    let listOfWeather=this.props.fakeWeatherData.slice(1,8);
-
+    let listOfWeather=this.props.fakeWeatherData.list;
+console.log(this.props.fakeWeatherData.list)
     return (
 
       <div className="container">

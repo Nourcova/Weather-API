@@ -16,23 +16,23 @@ export class WeatherNow extends Component {
     }
 
     render() {
-        let ibrahim = '';
+        let status = '';
         switch (this.props.source) {
-          case 'Cleare':
-            ibrahim = clear;
+          case 'Clear':
+            status = clear;
             break;
           case 'Clouds':
-            ibrahim = cloudy;
+            status = cloudy;
             break;
           case 'Rain':
-            ibrahim = rain;
+            status = rain;
             break;
         }
         return (
             
-                <div className="img1"><img src={ibrahim} alt="storm icon" />
-                    <p className="oc">overcast cloud</p>
-                    <p className="temperature"><span>Temperature &nbsp;</span> {this.props.from} <span> &nbsp;to </span> &nbsp; {this.props.to} </p>
+                <div className="img1"><img src={status} alt="storm icon" />
+                    <p className="oc">{this.props.description}</p>
+                    <p className="temperature"><span>Temperature  &nbsp;</span> {this.props.min_temperature} <span> &nbsp;to </span> &nbsp; {this.props.max_temperature} </p>
                     <p className="temperature"><span>Humidity &nbsp;</span> {this.props.humudity}&nbsp;<span >  Pressure  </span> &nbsp;{this.props.pressure}</p>
                 </div>
             )
