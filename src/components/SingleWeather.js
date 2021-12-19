@@ -11,11 +11,28 @@ import snow from "../img/weather-icons/snow.svg";
 
 class SingleWeather extends Component {
     render() {
+        const checkWeather = () =>{
+            let ibrahim = '';
+              switch (this.props.source) {
+                case 'Clear':
+                  ibrahim = clear;
+                  break;
+                case 'Clouds':
+                  ibrahim = cloudy;
+                  break;
+                case 'Rain':
+                  ibrahim = rain;
+                  break;
+              }
+              console.log(ibrahim)
+              return ibrahim
+          }
         return (
+            
             <div>
                 <div className="weath">
                     <p>{this.props.time}</p>
-                    <img src={this.props.source} alt="storm icon" />
+                    <img src={checkWeather()} alt="storm icon" />              
                     <p>{this.props.temperature}</p>
                 </div>
             </div>

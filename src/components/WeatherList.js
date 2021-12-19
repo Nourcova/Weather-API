@@ -13,39 +13,17 @@ import SingleWeather from './SingleWeather';
 class WeatherList extends Component {
   render() {
 
-    
-
-    const checkWeather = (param) =>{
-      let ibrahim = '';
-        switch (this.props.fakeWeatherData[param].weather[0].main) {
-          case 'Clear':
-            ibrahim = clear;
-            break;
-          case 'Clouds':
-            ibrahim = cloudy;
-            break;
-          case 'Rain':
-            ibrahim = rain;
-            break;
-        }
-        return ibrahim
-    }
-
-    let listOfWeather=this.props.fakeWeatherData;
+    let listOfWeather=this.props.fakeWeatherData.slice(1,8);
 
     return (
 
       <div className="container">
-
         {
         listOfWeather.map(x=>{
-
           return(
-          <SingleWeather time={x.dt_txt.split(' ')[1]} source={()=>checkWeather(x.weather[0].main)} temperature={x.main.temp_kf}/>
+          <SingleWeather time={x.dt_txt.split(' ')[1]} source={x.weather[0].main} temperature={x.main.temp_kf}/> 
           )
-          
-        })}
-        {console.log(`${checkWeather(0)}`)}
+        })}  
       </div>
     )
   }
