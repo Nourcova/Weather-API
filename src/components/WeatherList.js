@@ -9,56 +9,22 @@ import partlycloudy from "../img/weather-icons/partlycloudy.svg";
 import rain from "../img/weather-icons/rain.svg";
 import snow from "../img/weather-icons/snow.svg";
 import SingleWeather from './SingleWeather';
+
 class WeatherList extends Component {
   render() {
+
+    let listOfWeather=this.props.fakeWeatherData.slice(1,8);
+
     return (
+
       <div className="container">
-
-        <SingleWeather time="3:00" source={mostlycloudy} temperature="8 ℃" />
-        <SingleWeather time="6:00" source={mostlycloudy} temperature="9 ℃" />
-        <SingleWeather time="9:00" source={clear} temperature="14 ℃" />
-        <SingleWeather time="12:00" source={clear} temperature="17 ℃" />
-        <SingleWeather time="15:00" source={clear} temperature="18 ℃" />
-        <SingleWeather time="18:00" source={clear} temperature="16 ℃" />
-        <SingleWeather time="21:00" source={mostlycloudy} temperature="13 ℃" />
-
+        {
+        listOfWeather.map(x=>{
+          return(
+          <SingleWeather time={x.dt_txt.split(' ')[1]} source={x.weather[0].main} temperature={x.main.temp_kf}/> 
+          )
+        })}  
       </div>
-      /* <div className="weath">
-        <p>3:00</p>
-        <img src={mostlycloudy} alt="storm icon" />
-        <p>8 ℃</p>
-      </div>
-      <div className="weath">
-        <p>6:00</p>
-        <img src={mostlycloudy} alt="storm icon" />
-        <p>9 ℃</p>
-      </div>
-      <div className="weath">
-        <p>9:00</p>
-        <img src={clear} alt="storm icon" />
-        <p>14 ℃</p>
-      </div>
-      <div className="weath">
-        <p>12:00</p>
-        <img src={clear} alt="storm icon" />
-        <p>17 ℃</p>
-      </div>
-      <div className="weath">
-        <p>15:00</p>
-        <img src={clear} alt="storm icon" />
-        <p>18 ℃</p>
-      </div>
-      <div className="weath">
-        <p>18:00</p>
-        <img src={clear} alt="storm icon" />
-        <p>16 ℃</p>
-      </div>
-      <div className="weath">
-        <p>21:00</p>
-        <img src={mostlycloudy} alt="storm icon" />
-        <p>13 ℃</p>
-      </div> */
-
     )
   }
 }
