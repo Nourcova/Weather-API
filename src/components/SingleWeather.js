@@ -28,7 +28,7 @@ class SingleWeather extends Component {
               return status
           }
         return (
-            
+           
             <div>
                 <div className="weath">
                     <p>{this.props.time}</p>
