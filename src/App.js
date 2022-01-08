@@ -24,6 +24,7 @@ import snow from "./img/weather-icons/snow.svg";
 
 
 class App extends Component {
+  url = `http://api.openweathermap.org/data/2.5/forecast?q=London&cnt=8&units=metric&appid=ab59383c1894d3221a9b9785e7c9731a`;
   constructor(props) {
     super(props);
     this.state = {
@@ -37,12 +38,12 @@ class App extends Component {
       pressure: "",
       d: {},
       searchValue: "London",
-      url: `http://api.openweathermap.org/data/2.5/forecast?q=London&cnt=8&units=metric&appid=ab59383c1894d3221a9b9785e7c9731a`
     };
+
   }
 
   componentDidMount() {
-    fetch(this.state.url)
+    fetch(this.url)
       .then(res => res.json())
       .then(data => {
         //console.log(data);
@@ -68,26 +69,31 @@ class App extends Component {
   getValue = (value) => {
 
     this.setState({ searchValue: value })
-    if (this.state.searchValue === "") {
+    if (!value) {
       alert("please enter a name");
       return;
     }
-    fetch(this.state.url)
+    this.url = `http://api.openweathermap.org/data/2.5/forecast?q=${value}&cnt=8&units=metric&appid=ab59383c1894d3221a9b9785e7c9731a`
+    fetch(this.url)
       .then(res => res.json())
       .then(data => {
-        //console.log(data);
-        this.setState({
-          city: data.city.name,
-          humidity: data.list[0].main.humidity,
-          pressure: data.list[0].main.pressure,
-          min_temperature: data.list[0].main.temp_min,
-          max_temperature: data.list[0].main.temp_max,
-          description: data.list[0].weather[0].description,
-          source: data.list[0].weather[0].main,
-          d: data,
-        })
+        console.log(data);
+        if (data.cod == 404) {
+          alert("Please enter a valid data")
+        }
+        else {
+          this.setState({
+            city: data.city.name,
+            humidity: data.list[0].main.humidity,
+            pressure: data.list[0].main.pressure,
+            min_temperature: data.list[0].main.temp_min,
+            max_temperature: data.list[0].main.temp_max,
+            description: data.list[0].weather[0].description,
+            source: data.list[0].weather[0].main,
+            d: data,
+          })
+        }
       })
-    this.setState({ url: `http://api.openweathermap.org/data/2.5/forecast?q=${value}&cnt=8&units=metric&appid=ab59383c1894d3221a9b9785e7c9731a` })
   }
 
   render() {
@@ -95,7 +101,7 @@ class App extends Component {
       <div className="app">
         <Search getValue={this.getValue} />
         <div className="main">
-          <WeatherNow friko={this.state.searchValue} source={this.state.source} min_temperature={this.state.min_temperature} max_temperature={this.state.max_temperature} humudity={this.state.humidity} pressure={this.state.pressure} description={this.state.description} />
+          <WeatherNow cityName={this.state.city} source={this.state.source} min_temperature={this.state.min_temperature} max_temperature={this.state.max_temperature} humudity={this.state.humidity} pressure={this.state.pressure} description={this.state.description} />
           <WeatherList fakeWeatherData={this.state.d.list} />
         </div>
       </div>
