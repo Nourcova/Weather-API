@@ -7,6 +7,7 @@ class Search extends React.Component {
   };
 
   render() {
+
     return (
       /*<div>
         {this.state.input}
@@ -26,10 +27,15 @@ class Search extends React.Component {
         </button>
       </div>*/
       <header>
+        <form>
           <div className="input">
-            <input type="search" name="search" placeholder="Search City" /></div>
-          <div><button>find weather</button></div>
-        </header>
+            <input id="search" type="search" name="search" placeholder="Search City" /></div>
+          <input type="button" onClick={()=>{
+            this.props.getValue(document.getElementById("search").value);
+            console.log(document.getElementById("search").value)
+            }} value="find weather"></input>
+        </form>
+      </header>
     );
   }
 }

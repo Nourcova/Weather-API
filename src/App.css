@@ -54,7 +54,7 @@ border: none;
 outline: none;
 border-bottom: 1px solid black;
 }
-button{
+input[type=button] {
   height: 50px;
   background-color: #5979ce;
   border: none;
@@ -101,6 +101,9 @@ font-weight: bold;
   width: 100%;
   justify-content: space-around;
   flex-wrap: wrap;
+}
+header form{
+  display: contents;
 }
 @media  (max-width:446px) {
 header{

@@ -11,19 +11,19 @@ import snow from "../img/weather-icons/snow.svg";
 import SingleWeather from './SingleWeather';
 
 class WeatherList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      listOfWeather: this.props.fakeWeatherData,
-    }
-  }
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     listOfWeather: this.props.fakeWeatherData,
+  //   }
+  // }
 
-  componentDidMount() {
-    this.setState({
-      listOfWeather: this.props.fakeWeatherData,
-    })
-    console.log(this.state.listOfWeather)
-  }
+  // componentDidMount() {
+  //   this.setState({
+  //     listOfWeather: this.props.fakeWeatherData,
+  //   })
+  //   console.log(this.state.listOfWeather)
+  // }
 
 
   render() {
@@ -31,9 +31,9 @@ class WeatherList extends Component {
 
       <div className="container">
         {
-          this.state.listOfWeather && this.state.listOfWeather.map(x => {
+          this.props.fakeWeatherData && this.props.fakeWeatherData.map(x => {
             return (
-              <SingleWeather time={x.dt_txt.split(' ')[1]} source={x.weather[0].main} temperature={x.main.temp_kf} />
+              <SingleWeather time={x.dt_txt.split(' ')[1]} source={x.weather[0].main} temperature={x.main.temp} />
             )
           })}
       </div>

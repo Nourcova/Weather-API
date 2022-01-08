@@ -31,6 +31,7 @@ export class WeatherNow extends Component {
         return (
             
                 <div className="img1"><img src={status} alt="storm icon" />
+                <h1>{this.props.friko}</h1>
                     <p className="oc">{this.props.description}</p>
                     <p className="temperature"><span>Temperature  &nbsp;</span> {this.props.min_temperature} <span> &nbsp;to </span> &nbsp; {this.props.max_temperature} </p>
                     <p className="temperature"><span>Humidity &nbsp;</span> {this.props.humudity}&nbsp;<span >  Pressure  </span> &nbsp;{this.props.pressure}</p>
