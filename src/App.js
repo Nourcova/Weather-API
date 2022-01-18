@@ -24,7 +24,7 @@ import snow from "./img/weather-icons/snow.svg";
 
 
 class App extends Component {
-  url = `http://api.openweathermap.org/data/2.5/forecast?q=London&cnt=8&units=metric&appid=ab59383c1894d3221a9b9785e7c9731a`;
+  url = `https://api.openweathermap.org/data/2.5/forecast?q=London&cnt=8&units=metric&appid=ab59383c1894d3221a9b9785e7c9731a`;
   constructor(props) {
     super(props);
     this.state = {
