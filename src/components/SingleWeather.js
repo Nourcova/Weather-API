@@ -33,7 +33,7 @@ class SingleWeather extends Component {
                 <div className="weath">
                     <p>{this.props.time}</p>
                     <img src={checkWeather()} alt="storm icon" />              
-                    <p>{this.props.temperature}</p>
+                    <p>{this.props.temperature}°C</p>
                 </div>
             </div>
         )
