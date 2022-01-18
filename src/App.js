@@ -73,7 +73,7 @@ class App extends Component {
       alert("please enter a name");
       return;
     }
-    this.url = `http://api.openweathermap.org/data/2.5/forecast?q=${value}&cnt=8&units=metric&appid=ab59383c1894d3221a9b9785e7c9731a`
+    this.url = `https://api.openweathermap.org/data/2.5/forecast?q=${value}&cnt=8&units=metric&appid=ab59383c1894d3221a9b9785e7c9731a`
     fetch(this.url)
       .then(res => res.json())
       .then(data => {
