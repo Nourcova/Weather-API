@@ -16,22 +16,47 @@ export class WeatherNow extends Component {
     }
 
     render() {
+      const checkWeather = () => {
         let status = '';
-        switch (this.props.source) {
-          case 'Clear':
-            status = clear;
+        switch (true) {
+          case (this.props.source <= 300):
+            status = storm;
+            return status;
             break;
-          case 'Clouds':
-            status = cloudy;
+          case (this.props.source > 300 && this.props.source <= 499):
+            status = drizzle;
+            return status;
             break;
-          case 'Rain':
+          case (this.props.source >= 500 && this.props.source <= 599):
             status = rain;
+            return status;
+            break;
+          case (this.props.source >= 600 && this.props.source <= 699):
+            status = snow;
+            return status;
+            break;
+          case (this.props.source >= 700 && this.props.source <= 799):
+            status = fog;
+            return status;
+            break;
+          case (this.props.source === 800):
+            status = clear;
+            return status;
+            break;
+          case (this.props.source === 801):
+            status = partlycloudy;
+            return status;
+            break;
+          case (this.props.source >= 802 && this.props.source <= 805):
+            status = mostlycloudy;
+            return status;
             break;
         }
+      }
         return (
             
-                <div className="img1"><img src={status} alt="storm icon" />
-                <h1>{this.props.cityName}</h1>
+                <div className="img1"><img src={checkWeather()} alt="icon" />
+                <h2>{this.props.cityName}</h2>
                     <p className="oc">{this.props.description}</p>
                     <p className="temperature"><span>Temperature  &nbsp;</span> {this.props.min_temperature}°C <span> &nbsp;to </span> &nbsp; {this.props.max_temperature}°C </p>
                     <p className="temperature"><span>Humidity &nbsp;</span> {this.props.humudity}&nbsp;<span >  Pressure  </span> &nbsp;{this.props.pressure}</p>

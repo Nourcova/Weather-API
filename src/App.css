@@ -24,54 +24,64 @@ div {
   border: 5px solid red;
 }
 */
-*{
-  font-family: 'Raleway','sans-serif';
+* {
+  font-family: "Raleway", "sans-serif";
 }
-body{
-  margin:0;
+
+body {
+  margin: 0;
 }
-header{
+header {
   background-color: #759eda;
   display: flex;
- height: 120px;
- align-items: center;
- align-content: flex-end;
+  height: 95px;
+  align-items: center;
+  align-content: flex-end;
 }
-button,input{
+button,
+input {
   margin-top: 10px;
-margin-left: 20px;
-  
+  margin-left: 20px;
 }
-main{
+main {
   width: 100%;
 }
-input{
+h2{
+  margin: 10px 0 10px 0;
+}
+input {
   border: none;
   background-color: transparent;
 }
-input:focus{
-border: none;
-outline: none;
-border-bottom: 1px solid black;
+input:focus {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid black;
 }
-input[type=button] {
+input[type="button"] {
   height: 50px;
   background-color: #5979ce;
   border: none;
-  
 }
-.oc{
+.oc   {
   color: white;
   font-weight: bold;
   font-size: 20px;
+  margin: 10px 0 10px 0;
 }
-.img1 span{
-font-weight: bold;
+
+.img1 span {
+  font-weight: bold;
 }
-.temperature{ 
-  color: #0F1D4D;
+.img1 img{
+  height: 28vh;
 }
-.main{
+.temperature {
+  color: #0f1d4d;
+  margin: 10px 0 10px 0;
+
+}
+.main {
   background-color: #9ccef4;
   display: flex;
   flex-direction: column;
@@ -80,41 +90,52 @@ font-weight: bold;
 /* .img1 img{
   width:40%;
 } */
-.img1,p{
-  text-align: center
+.img1,
+p {
+  text-align: center;
 }
 
-.transspan{
- opacity: 0.5;
+.transspan {
+  opacity: 0.5;
 }
-.weath img{
+.weath img {
   width: 100px;
   height: 100px;
 }
-.weath{
+.weath {
   text-align: center;
-  margin:10px;
+  margin: 10px;
   padding-bottom: 20px;
 }
-.container{
+.weath p{
+  margin: 10px 0 10px 0;
+}
+.container {
   display: flex;
   width: 100%;
   justify-content: space-around;
   flex-wrap: wrap;
 }
-header form{
+header form {
   display: contents;
 }
-@media  (max-width:446px) {
-header{
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  align-content: flex-start;
+@media (max-width: 446px) {
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-content: flex-start;
+  }
 }
 
-
+@media (max-width: 962px){
+  .weath p{
+    margin: 16px 0 16px 0;
+  }
+  h2{
+    margin: 16px 0 16px 0;
+  }
+  .oc, .temperature{
+    margin: 16px 0 16px 0;
+  }
 }
- 
-
-

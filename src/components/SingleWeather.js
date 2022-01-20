@@ -11,28 +11,56 @@ import snow from "../img/weather-icons/snow.svg";
 
 class SingleWeather extends Component {
     render() {
-        const checkWeather = () =>{
-            let status = '';
-              switch (this.props.source) {
-                case 'Clear':
-                  status = clear;
-                  break;
-                case 'Clouds':
-                  status = cloudy;
-                  break;
-                case 'Rain':
-                  status = rain;
-                  break;
-              }
-            
-              return status
-          }
+      const checkWeather = () => {
+        let status = '';
+        switch (true) {
+          case (this.props.source <= 300):
+            status = storm;
+            return status;
+            break;
+          case (this.props.source > 300 && this.props.source <= 499):
+            status = drizzle;
+            return status;
+
+            break;
+          case (this.props.source >= 500 && this.props.source <= 599):
+            status = rain;
+            return status;
+
+            break;
+          case (this.props.source >= 600 && this.props.source <= 699):
+            status = snow;
+            return status;
+
+            break;
+          case (this.props.source >= 700 && this.props.source <= 799):
+            status = fog;
+            return status;
+
+            break;
+          case (this.props.source == 800):
+            status = clear;
+            return status;
+
+            break;
+          case (this.props.source == 801):
+            status = partlycloudy;
+            return status;
+
+            break;
+          case (this.props.source >= 802 && this.props.source <= 805):
+            status = mostlycloudy;
+            return status;
+
+            break;
+        }
+      }
         return (
            
             <div>
                 <div className="weath">
                     <p>{this.props.time}</p>
-                    <img src={checkWeather()} alt="storm icon" />              
+                    <img src={checkWeather()} alt="icon" />              
                     <p>{this.props.temperature}°C</p>
                 </div>
             </div>
